@@ -20,12 +20,11 @@ public class Test implements Function<double[],Double[]> {
         return new Double[]{root1, root2};
     }
 
+
     private boolean isNegative(double x){
          return x<0;
     }
         
-
-    
 
 }
 
