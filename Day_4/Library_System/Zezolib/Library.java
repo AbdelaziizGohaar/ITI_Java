@@ -2,19 +2,22 @@ package Zezolib;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Library {
-    // class Library<? extends LibraryItem> 
-// {
-//    private List<T> items = new ArrayList<>();
-////////////////////////////////////////////////////////////////////    
+//public class Library {
+class Library < T extends LibraryItem> 
+ {
+    List <T>items;
+ //    private List<T> items = new ArrayList<>();
+ ////////////////////////////////////////////////////////////////////    
  //public static void add(List <? extends LibraryItem> list) 
  //{
-
  //}
 
- public List<? extends LibraryItem> items = new ArrayList<>();
+   public Library()
+   {
+    items = new ArrayList<>();
+   }
 
- public void addItem(LibraryItem item) {
+ public void addItem(T item) {
      items.add(item);
  }
 
@@ -50,7 +53,10 @@ public class Library {
 }
 
 
-
+public void deleteItem(int id) throws ItemNotFoundException {
+    LibraryItem item = findItemById(id);
+    items.remove(item);
+}
 
 
 } /////// end of class

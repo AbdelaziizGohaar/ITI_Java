@@ -11,7 +11,6 @@ public class Magazine extends LibraryItem{
     @Override
     public String getItemDetailes() {
         return "Book [ID: " + getId() + " ]" + "[ Title: " + getTitle() + "]";
-        //throw new UnsupportedOperationException("Unimplemented method 'getItemDetailes'");
     }
 
     
