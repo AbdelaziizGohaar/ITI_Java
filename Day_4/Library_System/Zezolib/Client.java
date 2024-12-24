@@ -19,10 +19,13 @@ public class Client {
   }
 
     /*
-     Design a class hierarchy for library clients:
-   - Create a `Client` class with properties like `id`, `name`, and `email`.
-   - Add a method `getClientDetails()` to display client information.
- 
+5. Implement a menu system to provide CRUD (Create, Read, Update, Delete) functionalities for:
+   - Library items (e.g., add books/magazines, retrieve item details, update or delete items).
+   - Library clients (e.g., add clients, retrieve client details, update or delete clients).
+
      */
-    
+
+     
+
+     
 }

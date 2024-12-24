@@ -22,9 +22,9 @@ public class Library {
  {
     for (T item : items)
     {
-         if (item.getId()==id) 
+        if (item.getId()==id) 
         {
-             return item;
+            return item;
         }
     }
     throw new ItemNotFoundException("Item with ID " + id + " not found.");

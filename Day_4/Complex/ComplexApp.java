@@ -1,26 +1,38 @@
 public class ComplexApp {
     static class Complex<T extends Number>{
-        T real, img;
+        T real, imag;
         public Complex(T real, T imag){
             this.real = real;
-            this.img = imag;
+            this.imag = imag;
         }
 
-        public Complex<Double> add(Complex<T> rOperand){
-            double real = this.real.doubleValue() + rOperand.real.doubleValue();
-            double img = this.img.doubleValue() + rOperand.img.doubleValue();
+        public Complex<Double> add(Complex<T> right){
+            double real = this.real.doubleValue() + right.real.doubleValue();
+            double img = this.imag.doubleValue() + right.imag.doubleValue();
             return new Complex<Double>(real, img);
         }
 
-        public String toString(){
-            return String.format("%d%s%s", real, (img.doubleValue() <= 0) ? "" : "+", img.doubleValue() == 0 ? "" : img.toString());
+////////////////////////////////////////////////////////
+
+     public String toString() {
+        StringBuilder result = new StringBuilder();
+
+        result.append(real.toString()); 
+
+        if (imag.doubleValue() > 0) {
+            result.append("+").append(imag.toString()); 
+        } else if (imag.doubleValue() < 0) {
+            result.append(imag.toString()); 
         }
+        return result.toString();
+    }
+
     }
 
 
     public static void main(String[] args){
         System.out.println(
-            new Complex<Number>(25, 0)
+            new Complex<Integer>(25, 0)
         );
     }
 }
