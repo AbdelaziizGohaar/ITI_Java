@@ -10,11 +10,12 @@ public class AlphapaticMap {
     // SortedMap<String, Integer> wordMap = new TreeMap<>(); 
         private SortedMap<Character, TreeSet<String>> wordsMap;
 
-  AlphapaticMap()
+  public AlphapaticMap()
   {
     alphapaticMap = null;
-   // WordMap word = new WordMap();
-    /////////////////////////////////
+   /// WordMap word = new WordMap();
+  /////////////////////////////////
+  /////////////////////////////////////  
     wordsMap = new TreeMap<>();
     // Initialize map with all alphabets
     for (char c = 'A'; c <= 'Z'; c++) {
@@ -27,7 +28,8 @@ public class AlphapaticMap {
      
 
   }
-   // Method to add a word to the map
+
+  
    public void addWord(String word) {
     if (word == null || word.isEmpty()) return;
 

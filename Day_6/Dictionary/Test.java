@@ -1,13 +1,12 @@
 import DicLib.AlphapaticMap;
-import java.util.Scanner;
+import DicLib.WordDictionary;
 
 public class Test {
     
-
 public static void main(String[] args) {
  
  //   AlphapaticMapbeticWordMap wordMap = new AlphabeticWordMap();
-    AlphapaticMap wordMap = new AlphabeticWordMap();
+    AlphapaticMap wordMap = new AlphapaticMap();
 
     // Adding some sample words
     wordMap.addWord("Apple");
@@ -34,15 +33,8 @@ public static void main(String[] args) {
 ////////////////////////////////////////////////////////////////////////////// 
  
  WordDictionary wordDictionary = new WordDictionary();
-        Scanner scanner = new Scanner(System.in);
-
- 
-
-        // Print all words
-        wordDictionary.printDictionary();
-
- 
-        // Add some sample words
+        
+        wordDictionary.addWord("Union", "نقابة"); 
         wordDictionary.addWord("Apple", "تفاحة");
         wordDictionary.addWord("Banana", "موز");
         wordDictionary.addWord("Cherry", "كرز");     
@@ -71,11 +63,11 @@ public static void main(String[] args) {
         wordDictionary.addWord("Watermelon", "بطيخ");
         wordDictionary.addWord("Zebra", "حمار وحشي");
 
-        // Print all words
+     
         wordDictionary.printDictionary();
         // Print updated dictionary
         //wordDictionary.printDictionary();
-        scanner.close();
+     
 
 
 

@@ -3,12 +3,12 @@ package DicLib ;
 import java.util.TreeMap;
 
 public class WordDictionary {
-    // TreeMap to store words and their meanings
+ 
     private TreeMap<String, String> dictionary = new TreeMap<>();
 
-    // Method to add a word with its meaning
+ 
     public void addWord(String word, String meaning) {
-        dictionary.put(word, meaning); // Automatically handles sorting
+        dictionary.put(word, meaning); 
     }
 
     // Method to print all words and their meanings
@@ -18,7 +18,6 @@ public class WordDictionary {
             System.out.println(word + " -> " + dictionary.get(word));
         }
     }
-
 
     
 }
