@@ -57,6 +57,9 @@ public class LibraryMangmentSystem {
                         int itemType = scanner.nextInt();
                         scanner.nextLine();
                         System.out.print("Enter ID: ");
+                        if (!scanner.hasNextInt()) { // Check if the next input is an integer
+                            throw new IllegalArgumentException("ID must be an integer!");
+                        }
                         int id = scanner.nextInt();
                         scanner.nextLine();
                         System.out.print("Enter Title: ");
@@ -75,6 +78,9 @@ public class LibraryMangmentSystem {
                         break;
                     case 2:
                         System.out.print("Enter item ID: ");
+                        if (!scanner.hasNextInt()) { // Check if the next input is an integer
+                            throw new IllegalArgumentException("ID must be an integer!");
+                        }
                         int retrieveId = scanner.nextInt();
                         scanner.nextLine();
                         LibraryItem item = library.findItemById(retrieveId);
@@ -85,12 +91,18 @@ public class LibraryMangmentSystem {
                         break;
                     case 4:
                         System.out.print("Enter item ID to remove: ");
+                        if (!scanner.hasNextInt()) { // Check if the next input is an integer
+                            throw new IllegalArgumentException("ID must be an integer!");
+                        }
                         int removeId = scanner.nextInt();
                         scanner.nextLine();
                         library.deleteItem(removeId);
                         break;
                     case 5:
                         System.out.print("Enter Client ID: ");
+                        if (!scanner.hasNextInt()) { // Check if the next input is an integer
+                            throw new IllegalArgumentException("ID must be an integer!");
+                        }
                         int clientId = scanner.nextInt();
                         scanner.nextLine();
                         System.out.print("Enter Name: ");
@@ -101,6 +113,9 @@ public class LibraryMangmentSystem {
                         break;
                     case 6: /// retrieve client 
                         System.out.print("Enter Client ID: ");
+                        if (!scanner.hasNextInt()) { // Check if the next input is an integer
+                            throw new IllegalArgumentException("ID must be an integer!");
+                        }
                         int retrieveClientId = scanner.nextInt();
                         scanner.nextLine();
                         Client SearchClient = library.findClientById(retrieveClientId);
@@ -121,6 +136,9 @@ public class LibraryMangmentSystem {
                         break;
                     case 8:
                         System.out.print("Enter Client ID to remove: ");
+                        if (!scanner.hasNextInt()) { // Check if the next input is an integer
+                            throw new IllegalArgumentException("ID must be an integer!");
+                        }
                         int removeClientId = scanner.nextInt();
                         scanner.nextLine();
                         Client clientToRemove = library.ClientList.stream()
@@ -144,6 +162,9 @@ public class LibraryMangmentSystem {
                       //  Clientobjborrow.ClientBorrowList.add(itemobj);
                         /////////////////////////////////////////////////////////////////////////////////////////////
                         System.out.print("Enter Client ID to Borrow: ");
+                        if (!scanner.hasNextInt()) { // Check if the next input is an integer
+                            throw new IllegalArgumentException("ID must be an integer!");
+                        }
                         int clientIdToBorrow = scanner.nextInt();
                         scanner.nextLine();                
                         Client clientObjBorrow = library.findClientById(clientIdToBorrow);                
@@ -168,6 +189,9 @@ public class LibraryMangmentSystem {
                         case 10:
                         // new Feature 
                         System.out.print("Enter Client ID to Return : ");
+                        if (!scanner.hasNextInt()) { // Check if the next input is an integer
+                            throw new IllegalArgumentException("ID must be an integer!");
+                        }
                         int clientIdToReturn = scanner.nextInt();
                         scanner.nextLine();                
                         Client clientObjReturn = library.findClientById(clientIdToReturn);                
@@ -177,7 +201,7 @@ public class LibraryMangmentSystem {
                         scanner.nextLine();
                         clientObjReturn.returnItem (objIdToReturn);              
                         System.out.println("Item returned successfully! ");
-                        
+
                         break;
                     case 11:
                         System.out.println("Exiting the system. Goodbye!");
@@ -188,7 +212,11 @@ public class LibraryMangmentSystem {
                 }
             } catch (ItemNotFoundException e) {
                 System.out.println(e.getMessage());
-            } catch (Exception e) {
+            }catch (IllegalArgumentException e) {
+                System.out.println("Error: " + e.getMessage());
+                scanner.nextLine(); 
+            }
+             catch (Exception e) {
                 System.out.println("An error occurred: " + e.getMessage());
             }
         }
