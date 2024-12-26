@@ -8,7 +8,6 @@ public class Client {
  public int id ;
  public String name ;
  public String email ;
- public List<? extends LibraryItem> ClientList = new ArrayList<>(); 
 
 
   public Client(int id , String name , String email )
@@ -30,32 +29,7 @@ public class Client {
     */
 
 
-     public  void  addClient(int id, String name, String email) 
-    {
-      Client c = new Client(id, name, email);
-      ClientList.add(c);
-     // return new Client(id, name, email);
-    }
-
-
-    public void displayClients() 
-  {
-    for (Client client : ClientList) 
-    {
-      System.out.println(client.getClientDetails());
-    }
-  }
+   
  
-  public String deletClient(int Id)
-  {
-    for (Client client : ClientList) 
-    {
-      if(client.id == Id )
-      {
-        clients.Delete(client);
-      }
-    }
-    return "This Client is Removed "+client.getClientDetails();
-  }
 
 }

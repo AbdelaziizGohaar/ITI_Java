@@ -1,6 +1,6 @@
 package Zezolib;
 
-abstract class LibraryItem
+public abstract class LibraryItem
 {
  private int id ;
  private String title ;
